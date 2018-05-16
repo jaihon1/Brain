@@ -1,9 +1,11 @@
 
-var brain;
-
 function setup() {
   // put setup code here
-  brain = new NeuralNetwork(3, 3, 1); 
+  let a = new Matrix(3, 3);
+  a.randomize();
+  a.print();
+  let c = a.transpose();
+  c.print();
 }
 
 function draw() {
