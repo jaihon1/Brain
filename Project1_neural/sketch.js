@@ -1,12 +1,42 @@
 
-function setup() {
-  // put setup code here
-  let nn = new NeuralNetwork(2, 2, 2);
-  let input = [1, 0];
-  let targets = [1, 0.6];
-  //let output = nn.feedForward(input);
+let training_data = [
+    {
+        inputs: [0,0],
+        targets: [0]
+    },
+    {
+        inputs: [1,0],
+        targets: [1]
+    },
+    {
+        inputs: [0,1],
+        targets: [1]
+    },
+    {
+        inputs: [1,1],
+        targets: [0]
+    },
+]
 
-  nn.train(input, targets);
+
+function setup() {
+  //put setup code here
+  let nn = new NeuralNetwork(2, 5, 1);
+  console.table(nn.feedForward([0,0]));
+  console.table(nn.feedForward([0,1]));
+  console.table(nn.feedForward([1,0]));
+  console.table(nn.feedForward([1,1]));
+
+  for(let i = 0; i < 10000; i++){
+      let data = random(training_data);
+      nn.train(data.inputs, data.targets);
+  }
+
+  console.table(nn.feedForward([0,0]));
+  console.table(nn.feedForward([0,1]));
+  console.table(nn.feedForward([1,0]));
+  console.table(nn.feedForward([1,1]));
+
 
 
 

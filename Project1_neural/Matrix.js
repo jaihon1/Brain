@@ -19,7 +19,7 @@ class Matrix{
     randomize(){
         for(let i = 0; i < this.rows; i++){
             for(let j = 0; j < this.columns; j++){
-                this.data[i][j] = Math.floor(Math.random() * 2 - 1); //random number [-1, 1]
+                this.data[i][j] = (Math.random() * 2 - 1); //random number [-1, 1]
             }
         }
     }
@@ -132,6 +132,18 @@ class Matrix{
                 this.data[i][j] = func(val);
             }
         }
+    }
+
+    //Static map function
+    static map(matrix, func){
+        let result = new Matrix(matrix.rows, matrix.columns);
+        for(let i = 0; i < matrix.rows; i++){
+            for(let j = 0; j < matrix.columns; j++){
+                let val = matrix.data[i][j];
+                result.data[i][j] = func(val);
+            }
+        }
+        return result;
     }
 
     //Static Matrix Transpose
