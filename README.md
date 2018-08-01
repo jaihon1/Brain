@@ -1,3 +1,3 @@
 # Brain
 
-This repository is used to learn and play with Artificial Neural Networks.
+This repository is used to learn Artificial Neural Networks.
