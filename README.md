@@ -1,3 +1,3 @@
 # Brain
 
-This repository is used to learn Artificial Neural Networks.
+Learn from sratch Artificial Neural Networks.
